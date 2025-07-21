@@ -84,7 +84,7 @@ def download_mp3(url, output_path):
 
 def download_mp4(url, output_path, quality):
     # aac 오디오 스트림만 선택하도록 필터 추가
-    fmt = f"bestvideo[height<={quality}]+bestaudio[acodec^=aac]/best"
+    fmt = f"bestvideo[ext=mp4][height<={quality}]+bestaudio[acodec^=mp4a]/best"
     ydl_opts = {
         'format': fmt,
         'outtmpl': str(output_path / '%(title)s.%(ext)s'),
